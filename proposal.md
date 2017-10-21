@@ -6,33 +6,38 @@ Takayoshi Nishida
 XX October, 2017
 
 ## Proposal
-_(approx.2-3 pages)_
 
 ### Domain Background
-_(approx.1-2 paragraphs)_
 
-In this section, provide brief details on the background information of the domain from which the project is proposed.
-Historical information relevant to the project should be included.
-It should be clear how or why a problem in the domain can or should be solved.
-Related academic research should be appropriately cited in this section, including why that research is relevant.
-Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
+Predicting the stock price has been researched for long. 
+Now many people try to predict with the machine learning algorithms, 
+but there is not a single answer for this and it is still challenging problem.
+
+It is also known that every country's stock market influences each other.
+So putting the another country's stock market price and predicting the stock price index worth challenging.
 
 ### Problem Statement
-_(approx.1 paragraph)_
 
-In this section, clearly describe the problem that is to be solved.
-The problem described should be well defined and should have at least one relevant potential solution.
-Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms), 
-measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
+The goal of this project is to predict whether the Nikkei 225 index increases or decreases compared to the previous day. 
+Nikkei 225 is a stock market index for the Tokyo Stock Exchange. 
+
+My hypothesis is that the Nikkei 225 has a strong correlation with the US stock prices (NASDAQ index) and foreign exchange rate (JPY/USD) of the previous day.
 
 ### Datasets and Inputs
-_(approx.2-3 paragraphs)_
 
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, 
-such as how they relate to the problem and why they should be used.
-Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, 
-should be included with relevant references and citations as necessary 
-It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+#### 1. Nikkei 225 
+
+The data starts from January 1950 to current date. This is obtained using Quandl.
+- https://www.quandl.com/data/NIKKEI/INDEX-Nikkei-Index
+#### 2. NASDAQ Index
+
+The data starts from January 2003 to current date. This is obtained using Quandl.
+- https://www.quandl.com/data/NASDAQOMX/COMP-NASDAQ-Composite-COMP
+
+#### 3. Currency Exchange - JPY/USD
+
+The data starts from March 1991 to current date. This is obtained using Quandl.
+- https://www.quandl.com/data/CURRFX/USDJPY-Currency-Exchange-Rates-USD-vs-JPY
 
 ### Solution Statement
 _(approx.1 paragraph)_
