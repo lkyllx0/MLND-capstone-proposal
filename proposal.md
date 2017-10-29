@@ -15,26 +15,41 @@ It is also known that every country's stock market influences each other. So put
 
 ### Problem Statement
 
-The goal of this project is to predict whether the Nikkei 225 index increases or decreases compared to the previous day. Nikkei 225 is a stock market index for the Tokyo Stock Exchange in Japan. 
+The goal of this project is to predict whether the close price of Nikkei 225 index increases or decreases compared to the previous day. Nikkei 225 is a stock market index for the Tokyo Stock Exchange in Japan. 
 
-My hypothesis is that the Nikkei 225 has a strong correlation with the US stock prices (NASDAQ index) and foreign exchange rate (JPY/USD) of the previous day.
+My hypothesis is that the Nikkei 225 has a strong correlation with the close price of US stock prices (NASDAQ index) and JPY/USD foreign exchange rate of the previous day.
+
+The target variable is the Nikkei 225's change from the previous day.
+For example, in case the Nikkei 225 index close price is "21450.04" and it was "21374.66" at the previous day, the change is "75.38".
+So the change will be positive value if the close price increase, and the difference will be negative value if the close price decreases.
+We can know the prediction is correct or not by comparing the actual change.
 
 ### Datasets and Inputs
+
+The data sets has a long history data. 
+But I am going to input only the data within some N days.
+If the N = 10 days, I am going to input the N days history as a feature data.
 
 #### 1. Nikkei 225 
 
 The data starts from January 1950 to current date. This is obtained by Quandl.
 - https://www.quandl.com/data/NIKKEI/INDEX-Nikkei-Index
 
+The input feature data is the change from the previous day.
+
 #### 2. NASDAQ Index
 
 The data starts from January 2003 to current date. This is obtained by Quandl.
 - https://www.quandl.com/data/NASDAQOMX/COMP-NASDAQ-Composite-COMP
 
+The input feature data is the change from the previous day of the NASDAQ index.
+
 #### 3. Currency Exchange - JPY/USD
 
 The data starts from March 1991 to current date. This is obtained by Quandl.
 - https://www.quandl.com/data/CURRFX/USDJPY-Currency-Exchange-Rates-USD-vs-JPY
+
+The input feature data is the change from the previous day of the JPY/USD exchange rate.
 
 ### Solution Statement
 
