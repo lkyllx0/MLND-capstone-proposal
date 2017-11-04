@@ -19,17 +19,13 @@ The goal of this project is to predict the change rate of the close price of Nik
 
 My hypothesis is that the Nikkei 225 has a strong correlation with the close price of US stock prices (NASDAQ index) and JPY/USD foreign exchange rate of the previous day.
 
-The target variable is the Nikkei 225's relative change rate from the previous day.
-For example, in case the Nikkei 225 index close price is "21450.04" and it was "21374.66" at the previous day, the relative change rate is ("21450.04" / "21374.66" ) ≒ 1.00352.
-Then, it is possible to know the error between the predicted rate and the actual rate.
+The target variable is the Nikkei 225's relative change rate from the previous day. For example, in case the Nikkei 225 index close price is "21450.04" and it was "21374.66" at the previous day, the relative change rate is ("21450.04" / "21374.66" ) ≒ 1.00352. Then, it is possible to know the error between the predicted rate and the actual rate.
 
 ### Datasets and Inputs
 
 I am going to prepare the input datasets from following 3 sources. 
 
-Those data sets has a long history data. 
-Nikkei 225 has the data from 1950, but the NASDAQ starts from 2003 from this source.
-So I plan to use the data from 2003 to 2017.
+Those data sets has a long history data. Nikkei 225 has the data from 1950, but the NASDAQ starts from 2003 from this source. So I plan to use the data from 2003 to 2017.
 
 #### 1. Nikkei 225 
 
@@ -59,8 +55,8 @@ I chose LSTM for this problem because:
 - this is a type of time-series problem.
 - LSTM has the advantages that can remember the past values better.
 
-I will input the data of input_size: N, which means the data within N days will be input as a feature data. 
-So inputting the N days data of the change rate for Nikkei 225, NASDAQ and JPY/USD exchange rate, I am going to predict the change rate of Nikkei 225.
+I will input the data of input_size: N, which means the data within N days will be input as a feature data. So inputting the N days data of the change rate for Nikkei 225, NASDAQ and JPY/USD exchange rate, I am going to predict the change rate of Nikkei 225.
+
 At first, I am thinking to start with input_size N = 10 days. After that, I need to investigate what parameter would get the best score.
 
 ### Benchmark Model
@@ -80,8 +76,7 @@ My prediction model calculates the change rate, so I think MAPE (Mean absolute p
 The first step is collecting the data. As discussed above, I will obtain the data from Quandl. 
 The file is CSV and the data is numeric value. 
 
-Next, I am going to use the change rate for the input data, so it is needed to calculate the change rate.
-It is calculated by the specific day's value 
+Next, I am going to use the change rate for the input data, so it is needed to calculate the change rate. It is calculated by the specific day's value 
 
 #### Splitting the data
 
@@ -94,8 +89,8 @@ Instead, I am going to split the data by year. 2003 to 2015 year for training da
 #### Model
 
 I am going to build the model with LSTM (Long short-term memory).
-I will start with the simple model first, which is input_size: 10 days, layer: 1. 
-After seeing the result, I am going to adjust the parameters and try to get the best result.
+
+I will start with the simple model first, which is input_size: 10 days, layer: 1. After seeing the result, I am going to adjust the parameters and try to get the best result.
 
 ### Reference
 
